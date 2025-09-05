@@ -275,36 +275,21 @@
                 </div>
             </div>
             
-            <!-- COT Report Widget - PROFESSIONAL SENTIMENT -->
+            <!-- IFCM Market Sentiment Widget - PROFESSIONAL -->
             <div class="col-lg-6 mb-4">
                 <div class="widget-container">
                     <div class="widget-header">
                         <i class="fas fa-chart-pie"></i>
-                        Market Sentiment (COT Report)
+                        Market Sentiment (IFCM/CFTC)
                     </div>
                     <div class="widget-content" style="height: 500px;">
                         <div class="loading-overlay">
                             <div class="spinner-border" role="status"></div>
                         </div>
-                        <div class="tradingview-widget-container" style="height: 500px;">
-                            <div class="tradingview-widget-container__widget"></div>
-                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-                            {
-                            "autosize": true,
-                            "symbol": "CFTC:232741_F_L_ALL",
-                            "interval": "1W",
-                            "timezone": "Europe/Berlin",
-                            "theme": "light",
-                            "style": "1",
-                            "locale": "pl",
-                            "enable_publishing": false,
-                            "allow_symbol_change": false,
-                            "studies": [],
-                            "hide_volume": true,
-                            "support_host": "https://www.tradingview.com"
-                            }
-                            </script>
-                        </div>
+                        <iframe src="https://www.ifcmarkets.com/en/informers/widget-market-sentiment" 
+                                style="height: 500px;" 
+                                onload="this.previousElementSibling.style.display='none'">
+                        </iframe>
                     </div>
                 </div>
             </div>
@@ -545,9 +530,9 @@
         });
         
         // Console info
-        console.log('📊 EURUSD Professional Dashboard - COT VERSION');
-        console.log('🚀 Professional sentiment analysis with COT data');
-        console.log('⚡ All widgets optimized for GitHub Pages');
+        console.log('📊 EURUSD Professional Dashboard - IFCM VERSION');
+        console.log('🚀 Professional IFCM sentiment analysis');
+        console.log('⚡ Clean data display without full page');
         console.log('💡 Dashboard by Trading Professional');
     </script>
 </body>
