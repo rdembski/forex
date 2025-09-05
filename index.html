@@ -275,21 +275,36 @@
                 </div>
             </div>
             
-            <!-- FXSSI Sentiment Widget - EMBEDDED -->
+            <!-- COT Report Widget - PROFESSIONAL SENTIMENT -->
             <div class="col-lg-6 mb-4">
                 <div class="widget-container">
                     <div class="widget-header">
                         <i class="fas fa-chart-pie"></i>
-                        Market Sentiment (FXSSI Live)
+                        Market Sentiment (COT Report)
                     </div>
                     <div class="widget-content" style="height: 500px;">
                         <div class="loading-overlay">
                             <div class="spinner-border" role="status"></div>
                         </div>
-                        <iframe src="https://fxssi.com/tools/current-ratio" 
-                                style="height: 500px;" 
-                                onload="this.previousElementSibling.style.display='none'">
-                        </iframe>
+                        <div class="tradingview-widget-container" style="height: 500px;">
+                            <div class="tradingview-widget-container__widget"></div>
+                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+                            {
+                            "autosize": true,
+                            "symbol": "CFTC:232741_F_L_ALL",
+                            "interval": "1W",
+                            "timezone": "Europe/Berlin",
+                            "theme": "light",
+                            "style": "1",
+                            "locale": "pl",
+                            "enable_publishing": false,
+                            "allow_symbol_change": false,
+                            "studies": [],
+                            "hide_volume": true,
+                            "support_host": "https://www.tradingview.com"
+                            }
+                            </script>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -530,9 +545,9 @@
         });
         
         // Console info
-        console.log('📊 EURUSD Professional Dashboard - FINAL VERSION');
-        console.log('🚀 All widgets optimized and working');
-        console.log('⚡ DXY and FXSSI Sentiment fixed');
+        console.log('📊 EURUSD Professional Dashboard - COT VERSION');
+        console.log('🚀 Professional sentiment analysis with COT data');
+        console.log('⚡ All widgets optimized for GitHub Pages');
         console.log('💡 Dashboard by Trading Professional');
     </script>
 </body>
