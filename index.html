@@ -119,10 +119,6 @@
             background: #28a745;
         }
         
-        .status-delayed {
-            background: #ffc107;
-        }
-        
         @keyframes pulse {
             0% { opacity: 1; }
             50% { opacity: 0.5; }
@@ -149,77 +145,6 @@
             border-radius: 20px;
             font-size: 14px;
             z-index: 1000;
-        }
-
-        /* Alternative widget styles */
-        .fxssi-widget {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 30px;
-            text-align: center;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .fxssi-widget h3 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-
-        .fxssi-widget p {
-            color: #6c757d;
-            margin-bottom: 20px;
-            font-size: 16px;
-        }
-
-        .fxssi-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 25px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .fxssi-btn:hover {
-            transform: translateY(-2px);
-            color: white;
-            text-decoration: none;
-        }
-
-        .correlation-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-            gap: 10px;
-            padding: 20px;
-        }
-
-        .correlation-item {
-            background: rgba(103, 126, 234, 0.1);
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            border: 1px solid rgba(103, 126, 234, 0.2);
-        }
-
-        .correlation-value {
-            font-size: 18px;
-            font-weight: bold;
-            color: #2c3e50;
-        }
-
-        .correlation-pair {
-            font-size: 12px;
-            color: #6c757d;
-            margin-top: 5px;
         }
     </style>
 </head>
@@ -276,7 +201,7 @@
                 </div>
             </div>
             
-            <!-- DXY Monitor -->
+            <!-- DXY Monitor - FIXED -->
             <div class="col-lg-4 mb-4">
                 <div class="widget-container">
                     <div class="widget-header">
@@ -292,7 +217,7 @@
                             <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
                             {
                             "autosize": true,
-                            "symbol": "TVC:DXY",
+                            "symbol": "PEPPERSTONE:USDX",
                             "interval": "15",
                             "timezone": "Europe/Berlin",
                             "theme": "light",
@@ -313,7 +238,7 @@
         
         <!-- Analysis Row -->
         <div class="row">
-            <!-- Alternative Correlation Widget -->
+            <!-- TradingView Correlation Matrix -->
             <div class="col-lg-6 mb-4">
                 <div class="widget-container">
                     <div class="widget-header">
@@ -350,22 +275,21 @@
                 </div>
             </div>
             
-            <!-- FXSSI Sentiment Alternative -->
+            <!-- FXSSI Sentiment Widget - EMBEDDED -->
             <div class="col-lg-6 mb-4">
                 <div class="widget-container">
                     <div class="widget-header">
                         <i class="fas fa-chart-pie"></i>
-                        Market Sentiment (FXSSI)
+                        Market Sentiment (FXSSI Live)
                     </div>
-                    <div class="widget-content">
-                        <div class="fxssi-widget">
-                            <h3><i class="fas fa-chart-bar"></i> Forex Sentiment Live</h3>
-                            <p>Analiza sentymentu rynku z wielu źródeł</p>
-                            <p><strong>Źródła danych:</strong> OANDA, Dukascopy, IG Group, MyFxBook, FXBlue</p>
-                            <a href="https://fxssi.com/tools/current-ratio" target="_blank" class="fxssi-btn">
-                                <i class="fas fa-external-link-alt"></i> Otwórz FXSSI Sentiment
-                            </a>
+                    <div class="widget-content" style="height: 500px;">
+                        <div class="loading-overlay">
+                            <div class="spinner-border" role="status"></div>
                         </div>
+                        <iframe src="https://fxssi.com/tools/current-ratio" 
+                                style="height: 500px;" 
+                                onload="this.previousElementSibling.style.display='none'">
+                        </iframe>
                     </div>
                 </div>
             </div>
@@ -549,7 +473,7 @@
                                     {"s": "FX:USDCHF", "d": "USD/CHF"},
                                     {"s": "FX:AUDUSD", "d": "AUD/USD"},
                                     {"s": "FX:USDCAD", "d": "USD/CAD"},
-                                    {"s": "TVC:DXY", "d": "DXY Index"}
+                                    {"s": "PEPPERSTONE:USDX", "d": "DXY Index"}
                                 ]
                                 }
                             ]
@@ -606,9 +530,9 @@
         });
         
         // Console info
-        console.log('📊 EURUSD Professional Dashboard - GitHub Pages Edition');
-        console.log('🚀 Optimized for real-time trading analysis');
-        console.log('⚡ All widgets loaded successfully');
+        console.log('📊 EURUSD Professional Dashboard - FINAL VERSION');
+        console.log('🚀 All widgets optimized and working');
+        console.log('⚡ DXY and FXSSI Sentiment fixed');
         console.log('💡 Dashboard by Trading Professional');
     </script>
 </body>
